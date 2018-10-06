@@ -27,8 +27,14 @@ export default class Menu extends React.Component {
 
     return (
       <div className='menu'>
-        <div className='menu-item'><div className='name menu-header'>Name</div><div className='price menu-header'>Price</div></div>
-        {menuItems}
+        <div className='menu-title'>{this.props.title}</div>
+        <div className='menu-table'>
+          <div className='menu-item'>
+            <div className='name menu-header'>Name</div>
+            <div className='price menu-header'>Price</div>
+          </div>
+          {menuItems}
+        </div>
       </div>
     );
   }

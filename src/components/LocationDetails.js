@@ -13,11 +13,27 @@ class LocationDetails extends React.Component {
   }
 
   render() {
-    let menu;
+    let eatin, takeout;
+
+    if (!this.props.location) return null;
 
     if (this.props.location.type == 'Restaurant') {
-      menu = <Menu items={this.props.location.items}/>;
+      if (this.props.location.eatin && this.props.location.eatin.length > 0) {
+        eatin =
+        <Menu
+          items={this.props.location.eatin}
+          title='Eat in'/>
+        ;
+      }
+      if (this.props.location.takeout && this.props.location.takeout.length > 0) {
+        takeout =
+        <Menu
+          items={this.props.location.takeout}
+          title='Take-out'/>
+        ;
+      }
     }
+
 
     return (
       <div className="details">
@@ -30,7 +46,8 @@ class LocationDetails extends React.Component {
         <div className="description">
           {this.props.location.description}
         </div>
-        {menu}
+        {eatin}
+        {takeout}
       </div>
     );
   }

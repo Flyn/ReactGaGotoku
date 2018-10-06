@@ -93,25 +93,36 @@ header {
       background: #202020;
       width: 50%;
       margin: auto;
-      display: table;
       font-size: 18px;
       margin-top: 20px;
-      .menu-header {
+      .menu-title {
+        text-transform: uppercase;
         text-align: center;
-        border-bottom : solid 1px black;
+        padding-top : 10px;
+        padding-bottom : 10px;
       }
-      .menu-item {
-        display: table-row;
-        .name {
-          display: table-cell;
-          padding: 5px;
-        }
-        .price {
-          border-left: solid 1px black;
-          width: 80px;
+      .menu-table {
+        display: table;
+        width: 100%;
+
+        .menu-header {
           text-align: center;
-          display: table-cell;
-          padding: 5px;
+          border-bottom : solid 1px black;
+          border-top : solid 1px black;
+        }
+        .menu-item {
+          display: table-row;
+          .name {
+            display: table-cell;
+            padding: 5px;
+          }
+          .price {
+            border-left: solid 1px black;
+            width: 80px;
+            text-align: center;
+            display: table-cell;
+            padding: 5px;
+          }
         }
       }
     }

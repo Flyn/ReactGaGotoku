@@ -21,10 +21,34 @@ header {
     font-size: 25px;
     color: white;
   }
+  margin-bottom: 30px;
+}
+
+.game-list {
+  .kenzan-icon {
+    background: url(../static/kenzan.jpg) no-repeat;
+    background-size : 600px 300px;
+    color : transparent;
+    width : 600px;
+    height : 300px;
+    overflow : hidden;
+    display : block;
+    margin: auto;
+  }
+  .ishin-icon {
+    background: url(../static/ishin.jpg) no-repeat;
+    background-size : 600px 300px;
+    color : transparent;
+    width : 600px;
+    height : 300px;
+    overflow : hidden;
+    display : block;
+    margin: auto;
+  }
 }
 
 .region-view {
-  margin-top: 20px;
+
   .title {
     text-align: center;
     font-size: 200%;

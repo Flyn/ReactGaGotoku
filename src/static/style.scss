@@ -1,0 +1,96 @@
+$mainText : #888;
+$mainBG : #222;
+
+html {
+  background-color: black;
+}
+
+div {
+  color : $mainText;
+}
+
+footer {
+  clear : left;
+}
+
+header {
+  text-align: center;
+  .app-title,a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+  }
+}
+
+.region-view {
+  margin-top: 20px;
+  .title {
+    text-align: center;
+    font-size: 200%;
+    text-transform: capitalize;
+  }
+
+  .interface {
+    border : solid 4px #333;
+    overflow: hidden;
+  }
+
+  .region-map {
+    width: 720px;
+    height : 800px;
+    float : left;
+    overflow: hidden;
+    padding : 4px;
+    padding-bottom: 20px;
+    border-right : solid 4px #333;
+  }
+
+  .details {
+    margin-left : 724px;
+    padding-top: 25px;
+    >.name {
+      text-align: center;
+      font-size: 25px;
+      color : #05E;
+      margin-bottom: 25px;
+    }
+    >.type {
+      text-align: center;
+      font-size: 25px;
+      color : #EE0;
+    }
+    >.description {
+      width: 50%;
+      margin: auto;
+      margin : auto;
+    }
+    >.menu {
+      background: #202020;
+      width: 50%;
+      margin: auto;
+      display: table;
+      font-size: 18px;
+      margin-top: 20px;
+      .menu-header {
+        text-align: center;
+        border-bottom : solid 1px black;
+      }
+      .menu-item {
+        display: table-row;
+        .name {
+          display: table-cell;
+          padding: 5px;
+        }
+        .price {
+          border-left: solid 1px black;
+          width: 80px;
+          text-align: center;
+          display: table-cell;
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+}

@@ -39,6 +39,9 @@ export default class Map extends React.Component {
     this.canvas.addEventListener('mouseup',this.mouseUp, false);
     this.canvas.addEventListener('DOMMouseScroll',this.handleScroll, false);
     this.canvas.addEventListener('mousewheel',this.handleScroll, false);
+
+    this.props.selectArea();
+
   }
 
   componentWillUnmount() {
@@ -119,6 +122,11 @@ export default class Map extends React.Component {
         selectedArea : overArea
       });
       this.props.selectArea(overArea.id);
+    } else {
+      this.setState({
+        selectedArea : null
+      });
+      this.props.selectArea();
     }
   }
 

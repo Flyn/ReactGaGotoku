@@ -50,7 +50,11 @@ class RegionView extends React.Component {
   }
 
   selectArea(areaId) {
-    this.props.locations(areaId).then((action) => this.props.selectLocation(action.details));
+    if (areaId) {
+      this.props.locations(areaId).then((action) => this.props.selectLocation(action.details));
+    } else {
+      this.props.selectLocation()
+    }
   }
 
   render() {

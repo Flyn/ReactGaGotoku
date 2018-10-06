@@ -5,7 +5,7 @@ import { SELECT_LOCATION, REQUEST_DETAILS, RECEIVE_DETAILS } from "../constants/
 function selectedLocation(state={}, action) {
   switch (action.type) {
     case SELECT_LOCATION:
-      return action.id
+      return action.id || null
     default :
       return state
   }

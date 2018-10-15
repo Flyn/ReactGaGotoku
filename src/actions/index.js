@@ -7,7 +7,7 @@ export const selectLocation = location => ({ type: SELECT_LOCATION, id: location
 var requestDetails = id => ({type : REQUEST_DETAILS, id: id});
 var receiveDetails = (id, json) => ({type : RECEIVE_DETAILS, id, details : json.data, receivedAt : Date.now()});
 
-export function fetchDetails(id) {
+export function fetchDetails(game, region, id) {
   // Thunk middleware knows how to handle functions.
   // It passes the dispatch method as an argument to the function,
   // thus making it able to dispatch actions itself.
@@ -23,7 +23,7 @@ export function fetchDetails(id) {
 
     // In this case, we return a promise to wait for.
     // This is not required by thunk middleware, but it is convenient for us.
-    return fetch('/api/kenzan/gion/'+id)
+    return fetch('/api/'+game+'/'+region+'/'+id)
       .then(
         response => response.json(),
         // Do not use catch, because that will also catch

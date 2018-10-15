@@ -8,7 +8,7 @@ import {selectLocation, fetchDetails} from '../actions/index'
 const mapDispatchToProps = dispatch => {
   return {
     selectLocation: location => dispatch(selectLocation(location)),
-    locations: id => dispatch(fetchDetails(id))
+    locations: (game, region, id) => dispatch(fetchDetails(game, region, id))
   };
 };
 
@@ -50,8 +50,11 @@ class RegionView extends React.Component {
   }
 
   selectArea(areaId) {
+    var region = this.props.region || this.props.match.params.region;
+    var game = this.props.game || this.props.match.params.game;
+
     if (areaId) {
-      this.props.locations(areaId).then((action) => this.props.selectLocation(action.details));
+      this.props.locations(game, region, areaId).then((action) => this.props.selectLocation(action.details));
     } else {
       this.props.selectLocation()
     }
